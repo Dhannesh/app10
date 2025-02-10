@@ -18,19 +18,29 @@ class MyStore extends StatelessWidget {
           title: const Text('Insta Store', style: TextStyle(color:Colors.white),),
         ),
         body: Container(
+          alignment: Alignment.center, // alignment of stack
           child: Stack(
-            alignment: Alignment.center,
+            alignment: Alignment.center, //internal alignment of stack items
             children: <Widget>[
               Container(
-                width: 300,
-                height: 300,
-                color: Colors.black,
+                width: 350,
+                height: 350,
+                color: Colors.purple,
                 alignment: Alignment.bottomLeft,
-                child: const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text(
-                    '1st Container',
-                    style: TextStyle(color: Colors.white),
+                child: Padding(
+                  padding: EdgeInsets.all(4.0),
+                  child: Stack(
+                    children: [
+                      Image.asset("images/heels.jpg"),
+                      const Text(
+                        "Heels",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 28
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ),
@@ -39,27 +49,40 @@ class MyStore extends StatelessWidget {
                 height: 250,
                 color: Colors.blue,
                 alignment: Alignment.bottomLeft,
-                child: const Padding(
+                child:  Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Text(
-                    '2nd Container',
-                    style: TextStyle(color: Colors.white),
+                  child: Stack(
+                    children: [
+                      Image.asset("images/mangoes.jpg"),
+                      const Text("Mangoes", style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24
+                      ),)
+                    ],
                   ),
                 ),
               ),
               Container(
-                width: 200,
-                height: 200,
-                color: Colors.purple,
+                width: 150,
+                height: 150,
+                color: Colors.pinkAccent,
                 alignment: Alignment.bottomLeft,
-                child: const Padding(
+                child:  Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Text(
-                    '3rd Container',
-                    style: TextStyle(color: Colors.white),
+                  child: Stack(
+                    children: [
+                      Image.asset("images/hats.jpeg"),
+                      const Text("Hats", style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20
+                      ),)
+                    ],
+                  ),
                   ),
                 ),
-              )
+
             ],
           ),
         ),

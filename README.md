@@ -23,37 +23,9 @@ Every child of a stack widget can be one of two types. They can be positioned wi
 
 In this first iteration of the code, we'll layer three images so one is on top of the other. The images have different sizes, so you can see all three. Take a look at what the output is going to be after we complete this demo. This is on the right side of your screen. Another thing to observe is that every image has some text layered over the image. We'll use a nested stack for that as well. So, you can see the text for Heels, Mangoes, and Hats. They're layered over their associated image. Our first Stack is going to comprise of three containers which wrap image assets. These are the children of the individual containers.
 
-Now, each container is going to be a non-positioned object. So, all of the children of this Stack are not positioned. I have the Stack defined on line 21, alignment set to Alignment.center means that the children of the stack will be positioned at the center of the stack, aligned at the center. The children property is set on line 23, and the first Container defined on line 24 has a height and width, both of which are 350 by 350.
+Now, each container is going to be a non-positioned object. So, all of the children of this Stack are not positioned. I have the Stack alignment set to Alignment.center means that the children of the stack will be positioned at the center of the stack, aligned at the center. The children property is set the first Container defined a height and width, both of which are 350 by 350. It has the purple color and its child is aligned on the bottomLeft. The child is a Padding element which has another child that is a stack, and we have a nested Stack within the first container of the outer stack. This essentially layers the text on top of the image.
 
-[Video description begins] Line 24 reads as: Container(. Line 25 reads as: width: 350,. Line 26 reads as: height: 350,. [Video description ends]
-
-It has the purple color and its child is aligned on the bottomLeft. The child is a Padding element which has another child that is a stack,
-
-[Video description begins] Line 27 reads as: color: Colors.purple,. Line 28 reads as: alignment: Alignment.bottomLeft,. [Video description ends]
-
-this is on line 31. So, we have an outer Stack defined on line 21,
-
-[Video description begins] Line 29 reads as: child:Padding(. Line 30 reads as: padding: constEdgeInsets.all(4.0),. Line 31 reads as: child: Stack(. [Video description ends]
-
-and we have a nested Stack within the first container of the outer stack. The nested stack is on line 31.
-
-Now, this nested stack has two children, the Image.asset on line 33 and the Text widget on line 34. This essentially layers the text on top of the image.
-
-[Video description begins] Line 32 reads as: children:[. Line 33 reads as: Image.asset('images/heels.jpg'),. Line 34 reads as: const Text(. [Video description ends]
-
-[Video description begins] She highlights the following lines of code. Line 35 reads as: 'Heels',. Line 36 reads as: style: TextStyle(color: Colors.black,. Line 37 reads as: fontWeight: FontWeight.bold,. Line 38 reads as: fontSize: 20. [Video description ends]
-
-I'm now going to scroll down and we can take a look at the second Container of the outer stack defined on line 45.
-
-[Video description begins] Line 45 reads as: Container(. Line 46 reads as: width: 250,. Line 47 reads as: height: 250,. Line 48 reads as: color: Colors.purple,. Line 49 reads as: alignment: Alignment.bottomLeft,. [Video description ends]
-
-You can see that the width and height of this Container is a little smaller than the first Container, it's 250 by 250. Again with the purple color, and you can see its child is a Padding element whose child is a Stack.
-
-[Video description begins] Line 50 reads as: child:Padding(. Line 51 reads as: padding: constEdgeInsets.all(4.0),. Line 52 reads as: child:Stack(. Line 53 reads as: children:[. Line 54 reads as: Image.asset('images/mangoes.jpg'),. Line 55 reads as: const Text(. Line 56 reads as: 'Mangoes',. Line 57 reads as: style: TextStyle(color: Colors.black,. Line 58 reads as: fontWeight: FontWeight.bold,. Line 59 reads as: fontSize: 20. [Video description ends]
-
-This nested stack in the child container is defined on line 52. This has two children, once again, an Image.asset on line 54 and a Text widget defined on line 55. The fact that the image and the text are within the stack defined on line 52, means that we'll have the text layered over the image of mangoes. Now, let's take a look at the third container. The third container of the outer stack has a similar structure.
-
-It's only 150 by 150 pixels. You can see this on line 67 and 68. It has a child that is a Padding whose child is a Stack defined on line 73. This nested stack within the third container contains an Image and a Text widget defined on line 75 and 76 respectively, and because we've used a Stack, the text will be layered over the image. Let's go ahead and run this very simple app and hopefully, this will give us the result that we are looking for. We have three images. Each image has some text layered over it in the top left corner. That is where the Stack places layers by default and each image with text is now layered one on top of the other. Now, so far, our stack has only used non-positioned objects. How do we use positioned objects within a stack? That's exactly what we're going to do in this next part of the demo.
+We have three images. Each image has some text layered over it in the top left corner. That is where the Stack places layers by default and each image with text is now layered one on top of the other. Now, so far, our stack has only used non-positioned objects. How do we use positioned objects within a stack? 
 
 I'm going to replace the code that I have here on screen and observe the body property. The body is set to a Container. This is on line 18 and the child of this container is the Stack.
 
