@@ -19,6 +19,7 @@ class MyStore extends StatelessWidget {
         ),
         body: Container(
           child: Stack(
+            alignment: Alignment.center,
             children: <Widget>[
               Container(
                 width: 300,
