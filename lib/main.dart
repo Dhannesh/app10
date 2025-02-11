@@ -37,13 +37,41 @@ class MyStore extends StatelessWidget {
                     ),
                     height: 300,
                     width: 300,
-                    child: Image.asset("images/heels.jpg", height: 200, width: 200,)),
+                    child: Image.asset("images/heels.jpg", height: 200, width: 200,)
+                ),
               ),
               Positioned(
-                top: 0,
-                left: 0,
-                child: Image.asset("images/hats.jpeg", height: 200, width: 200,),
+                top: 70,
+                right: 30,
+                child: Container(
+                    decoration: const BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(color:Colors.grey, blurRadius: 10.0, spreadRadius: 3.0, offset: Offset(10.0, 10.0)
+                          )
+                        ],
+                    ),
+                        height: 200,
+                        width: 200,
+                        child: Image.asset("images/mangoes.jpg", height: 200, width: 200,)
+                ),
               ),
+              Positioned(
+                bottom: 200,
+                left: 70,
+                child: Container(
+                    decoration: const BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(color:Colors.grey, blurRadius: 10.0, spreadRadius: 3.0, offset: Offset(10.0, 10.0)
+                        )
+                      ],
+                    ),
+                    height: 200,
+                    width: 200,
+                    child: Image.asset("images/books.jpg", height: 200, width: 200,)
+                ),
+              ),
+
+
             ],
           ),
         ),
