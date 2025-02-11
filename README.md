@@ -27,31 +27,15 @@ Now, each container is going to be a non-positioned object. So, all of the child
 
 We have three images. Each image has some text layered over it in the top left corner. That is where the Stack places layers by default and each image with text is now layered one on top of the other. Now, so far, our stack has only used non-positioned objects. How do we use positioned objects within a stack? 
 
-I'm going to replace the code that I have here on screen and observe the body property. The body is set to a Container. This is on line 18 and the child of this container is the Stack.
+## Positioned Object with in stack
 
-[Video description begins] Line 18 reads as: body: Container(. [Video description ends]
+The Positioned widget allows you to arbitrarily position widgets at specific positions within a stack. It's usually used to position child widgets in stack or some other similar widget. 
 
-Now, this Stack is interesting. It has three children, one of which is a non positioned object. That's the SizedBox on lines 22 through 26 and then we have two Positioned objects on lines 27 and 34.
+The SizedBox defined a height and width of 300 by 300 and it has a child that is an image. The stack will now size itself to the size of its non-positioned child, that is the SizedBox. I'll now show you an inset picture of what the final result looks like. Observe the image at the very back, the image of heels. That's the image in our SizedBox. The size of the stack is set to that image. Now, I have a Positioned object contains the mangoes image as a child. Observe the properties are set on the positioned object, bottom 0, right 0. This is the precise position that we want for mangoes.
 
-[Video description begins] Line 22 reads as: SizedBox(. Line 23 reads as: height: 300,. Line 24 reads as: width: 300,. Line 25 reads as: child: Image.asset('images/heels.jpg'). Line 26 reads as: ), // SizedBox(. [Video description ends]
-
-The Positioned widget works exactly like its name sounds.
-
-[Video description begins] Line 27 reads as: Positioned(. Line 28 reads as: bottom: 0,. Line 29 reads as: right: 0,. Line 30 reads as: child: Image.asset(. Line 31 reads as:'images/mangoes.jpg',. Line 32 reads as: height: 200,. Line 33 reads as: width: 200,)) , // Image.asset, Positioned. [Video description ends]
-
-The Positioned widget allows you to arbitrarily position widgets at specific positions within a stack. It's usually used to position child widgets in stack or some other similar widget. Now, what this Stack defined on line 20 will do is place the first non-positioned child,
-
-that is the SizedBox defined on lines 22 through 26. So, that has a height and width of 300 by 300 and it has a child that is an image. The stack will now size itself to the size of its non-positioned child, that is the SizedBox. I'll now show you an inset picture of what the final result looks like. Observe the image at the very back, the image of heels. That's the image in our SizedBox. The size of the stack is set to that image. Now, I have a Positioned object defined on lines 27 through 33. On line 30, you can see that this positioned object contains the mangoes image as a child. Observe the properties are set on the positioned object, bottom 0, right 0. This is the precise position that we want for mangoes.
-
-The bottom of this widget should be 0 pixels from the bottom of the stack that is our outer container, and the right of this widget should be 0 pixels from the right edge of the stack. And this gives us the result that we see in the inset image, the mangoes image is layered over the bottom heels image, and it's flush against the bottom and the right of that image. Next, let's look at the second Positioned image, the one for hats defined on lines 34 through 39.
-
-[Video description begins] Line 34 reads as: Positioned(. Line 35 reads as: top: 0,. Line 36 reads as: left: 0,. Line 37 reads as: child: Image.asset(. Line 38 reads as:'images/hats.jpeg',. Line 39 reads as: height: 200,. [Video description ends]
+The bottom of this widget should be 0 pixels from the bottom of the stack that is our outer container, and the right of this widget should be 0 pixels from the right edge of the stack. And this gives us the result that we see in the inset image, the mangoes image is layered over the bottom heels image, and it's flush against the bottom and the right of that image. Next,
 
 The top is at 0 pixels and the left is at 0 pixels. So, the top should be 0 pixels from the top edge of the container, and the left edge of this widget should be 0 pixels from the left edge of the container. And that's exactly why the hat image layered on top of the heels image and the mangoes image is flush against the top left of the stack. The size of the stack is equal to the size of the heels image.
-
-I'm just going to quickly run this and make sure we get the output that we expect. Yes, we have the heels image at the very bottom that is the size of our stack. Then we have the mangoes layered over it in a positioned manner and the hat layered over the mangoes image, again in a positioned manner. Before we wind up our discussion on the stack, let's look at one last example here, where I'm going to have three positioned widgets within my stack. The Stack is defined on line 18, and it has multiple children.
-
-[Video description begins] Line 18 reads as: child:Stack(. Line 19 reads as: children:[. Line 20 reads as: const SizedBox(. Line 21 reads as: height: double.infinity,. Line 22 reads as: width: double.infinity,. Line 23 reads as: ) , //SizedBox. [Video description ends]
 
 I'm now going to scroll down so we can focus on the stack. The first child of the stack is a SizedBox defined on lines 20 through 23, and I've set the height and width of the box to be equal to infinity. That is, this SizedBox fills up all of the available space in our screen. Since this is a non-positioned child of the stack, the size of the stack will be equal to the size of this child.
 
